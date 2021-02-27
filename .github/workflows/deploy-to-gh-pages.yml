@@ -23,9 +23,10 @@ jobs:
       - name: Set Git configs
         run: |
           git config user.name "GitHub Action Runner"
-          git config user.email "noreply@github.com"
+          git config user.email "support+actions@github.com"
+          git remote set-url origin https://git:${{ github.token }}@github.com/${{ github.repository }}.git
 
       - name: Export and deploy
         run: |
           npm run export
-          npm run deploy
+          npm run deploy -- --user "GitHub Action Runner <support+actions@github.com>"
