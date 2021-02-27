@@ -1,0 +1,12 @@
+{
+    "name": "HessForLanco",
+    "short_name": "HessForLanco",
+    "description": "Official website for the campaign to elect Chris Hess as Lancaster County Controller"
+    "icons": [{
+        "src": "/google-touch-icon.png",
+        "sizes": "512x512"
+    }],
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "fullscreen"
+}
