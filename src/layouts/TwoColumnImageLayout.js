@@ -8,18 +8,19 @@ const LayoutContainer = styled.div`
 
 const ContentContainer = styled.div`
   flex: 2 1 auto;
-  padding: 10px;
+  padding: 16px;
+  margin-bottom: 48px;
 `;
 
 const ImageContainer = styled.div`
   flex: 1 0 auto;
-  max-width: 33vw;
+  max-width: 40vw;
   img {
     max-width: 100%;
   }
 `;
 
-export default function TwoColumnImageLayout({ imageUrl, children, ...props }) {
+export default function TwoColumnImageLayout({ imageUrl, imgAlt, children, ...props }) {
   return (
     <BaseLayout {...props}>
       <LayoutContainer>
@@ -27,7 +28,7 @@ export default function TwoColumnImageLayout({ imageUrl, children, ...props }) {
           {children}
         </ContentContainer>
         <ImageContainer>
-          <img src={imageUrl} />
+          <img src={imageUrl} alt={imgAlt} />
         </ImageContainer>
       </LayoutContainer>
     </BaseLayout>
