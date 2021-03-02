@@ -1,8 +1,10 @@
 import Head from 'next/head';
 
+import Navbar from '../components/Navbar';
+
 const titlePrefix = "Chris Hess for Lancaster County Controller";
 
-export default function Layout({ titleSuffix, children }) {
+export default function BaseLayout({ titleSuffix, children }) {
   const title = titleSuffix ? `${titlePrefix} - ${titleSuffix}` : titlePrefix;
   return (
     <div>
@@ -16,7 +18,10 @@ export default function Layout({ titleSuffix, children }) {
         <link rel="manifest" href="/manifest.json" />
       </Head>
 
+      <Navbar />
+
       {children}
+
     </div>
   );
 }
