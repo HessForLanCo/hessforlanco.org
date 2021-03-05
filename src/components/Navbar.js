@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
+import Button from './Button';
+
 import { size, color } from '../theme';
 
 import logoImage from '../static/img/HessForController.svg';
@@ -36,17 +38,21 @@ const NavHeader = styled.div`
   }
 `;
 
+const CTAButtonContainer = styled.div`
+  margin: 0 48px;
+`;
+
 const NavSocialIcons = styled.div`
   font-size: ${size.fontLarge}px;
   margin-right: 32px;
 `;
 
 const SocialIconLink = styled.a`
-  color: ${color.primary};
+  color: inherit;
   display: inline-block;
-  padding: 16px;
+  margin: 16px;
   &:hover {
-    color: ${color.secondary};
+    color: ${color.primary};
   }
 `;
 
@@ -60,9 +66,14 @@ export default function Navbar() {
           </a>
         </Link>
       </NavHeader>
+
+      <CTAButtonContainer>
+        <Button cta asLink href="#">Donate</Button>
+      </CTAButtonContainer>
+
       <NavSocialIcons>
         {socialLinks.map(link => (
-          <SocialIconLink key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">
+          <SocialIconLink key={link.url} href={link.url}>
             <FontAwesomeIcon icon={link.icon} />
           </SocialIconLink>
         ))}

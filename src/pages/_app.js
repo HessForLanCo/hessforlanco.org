@@ -1,8 +1,7 @@
-import Head from 'next/head';
 import { Global, css } from '@emotion/react';
 import { config, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { size } from '../theme';
+import { size,color } from '../theme';
 
 /*
  * The below line comes from this GitHub issue to fix huge Fontawesome icons:
@@ -17,6 +16,8 @@ const globalStyles = css`
     margin: 0;
     font-family: 'Rubik', sans-serif;
     font-size: ${size.fontPrimary}px;
+    background-color: ${color.lightBackground};
+    color: ${color.onLightBackground};
   }
 
   * {
@@ -35,6 +36,7 @@ const globalStyles = css`
   ${dom.css()}
 `;
 
+// eslint-disable-next-line react/prop-types
 export default function App({ Component, pageProps }) {
   return (
     <>
