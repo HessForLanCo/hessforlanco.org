@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 import BaseLayout from './BaseLayout';
 
@@ -20,7 +21,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-export default function TwoColumnImageLayout({ imageUrl, imgAlt, children, ...props }) {
+export default function TwoColumnImageLayout({ imageUrl, imageAlt, children, ...props }) {
   return (
     <BaseLayout {...props}>
       <LayoutContainer>
@@ -28,9 +29,15 @@ export default function TwoColumnImageLayout({ imageUrl, imgAlt, children, ...pr
           {children}
         </ContentContainer>
         <ImageContainer>
-          <img src={imageUrl} alt={imgAlt} />
+          <img src={imageUrl} alt={imageAlt} />
         </ImageContainer>
       </LayoutContainer>
     </BaseLayout>
   );
 }
+
+TwoColumnImageLayout.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
