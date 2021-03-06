@@ -30,4 +30,4 @@ jobs:
         run: |
           npm run export -- -o build
           touch build/.nojekyll
-          npm run deploy -- -d build --user "GitHub Action Runner <support+actions@github.com>"
+          npm run deploy -- -d build --dotfiles --user "GitHub Action Runner <support+actions@github.com>"
