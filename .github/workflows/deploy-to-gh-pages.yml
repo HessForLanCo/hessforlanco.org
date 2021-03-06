@@ -28,5 +28,6 @@ jobs:
 
       - name: Export and deploy
         run: |
-          npm run export
-          npm run deploy -- --user "GitHub Action Runner <support+actions@github.com>"
+          npm run export -- -o build
+          touch build/.nojekyll
+          npm run deploy -- -d build --user "GitHub Action Runner <support+actions@github.com>"

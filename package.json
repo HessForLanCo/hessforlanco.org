@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export -o build",
-    "deploy": "gh-pages -d build"
+    "export": "next export",
+    "deploy": "gh-pages"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.2.0",
