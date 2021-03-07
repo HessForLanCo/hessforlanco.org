@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-import TwoColumnImageLayout from '../layouts/TwoColumnImageLayout';
+import MarqueeImageLayout from '../layouts/MarqueeImageLayout';
 import Button from '../components/Button';
 
-import marqueeImage from '../static/img/ChrisPortrait.jpg';
+import marqueeImage from '../static/img/ChrisChatting.jpg';
 const marqueeImageAlt = "Chris Hess";
 
 const Content = styled.main`
@@ -27,7 +27,14 @@ const CTAButtonsContainer = styled.div`
 
 export default function Home() {
   return (
-    <TwoColumnImageLayout imageUrl={marqueeImage} imageAlt={marqueeImageAlt}>
+    <MarqueeImageLayout
+      imageUrl={marqueeImage}
+      imageAlt={marqueeImageAlt}
+      title="Chris Hess"
+      subtitle="The better choice for Lancaster County Controller"
+      ctaUrl="#"
+      secondaryCtaUrl="#"
+    >
       <Content>
         <h1>Lancaster County has a choice for Controller for the first time in 20 years.</h1>
         <h2>Chris Hess is the better choice.</h2>
@@ -39,6 +46,6 @@ export default function Home() {
           <Button cta asLink href="#">Donate</Button>
         </CTAButtonsContainer>
       </Content>
-    </TwoColumnImageLayout>
+    </MarqueeImageLayout>
   );
 }

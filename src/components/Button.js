@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { size, color } from '../theme';
 
 const StyledButton = styled.button`
+  display: inline-block;
   font-family: inherit;
   background-color: ${props => (
     (props.secondary && color.lightBackground) ||
@@ -15,7 +16,7 @@ const StyledButton = styled.button`
     (props.cta && color.onCta) ||
     color.onPrimary
   )};
-  padding: ${props => props.secondary ? '9px 37px' : '12px 40px'}; 
+  padding: ${props => props.secondary ? '9px 37px' : '12px 40px'};
   border: ${props => props.secondary ? `3px solid ${color.primary}` : 'none'};
   border-radius: 2px;
   font-size: ${size.fontPrimary}px;

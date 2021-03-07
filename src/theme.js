@@ -1,7 +1,9 @@
 export const size = {
   navbarHeight: 128,
   fontPrimary: 20,
-  fontLarge: 32
+  fontLarge: 32,
+  fontTitle: 72,
+  fontSubtitle: 28
 };
 
 export const color = {
@@ -10,6 +12,8 @@ export const color = {
 
   darkBackground: '#333',
   onDarkBackground: '#fff',
+
+  textShadow: 'rgba(0, 0, 0, 0.25)',
 
   primary: '#365fcb',
   primaryLight: '#7491db',
