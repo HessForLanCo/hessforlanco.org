@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import TwoColumnImageLayout from '../layouts/TwoColumnImageLayout';
 import Button from '../components/Button';
 
-import marqueeImage from '../static/img/ChrisShakingHands.jpg';
-const marqueeImageAlt = "Chris out in Lancaster meeting constituents";
+import marqueeImage from '../static/img/ChrisPortrait.jpg';
+const marqueeImageAlt = "Chris Hess";
 
 const Content = styled.main`
   display: flex;
