@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import BaseLayout from './BaseLayout';
-import Button from '../components/Button';
 import { color, size } from '../theme';
 
 const LayoutContainer = styled.div`
@@ -37,17 +36,11 @@ const TitleContainer = styled.div`
   }
 `;
 
-const CTAContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin: 16px 0;
-`;
-
 const ContentContainer = styled.div`
   margin: 16px 13%;
 `;
 
-export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, ctaUrl, secondaryCtaUrl, onLight, children, ...props }) {
+export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, onLight, children, ...props }) {
   return (
     <BaseLayout {...props}>
       <LayoutContainer>
@@ -56,12 +49,6 @@ export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle
           <TitleContainer onLight={onLight}>
             {title && <h1>{title}</h1>}
             {subtitle && <h2>{subtitle}</h2>}
-            {false && (
-              <CTAContainer>
-                {ctaUrl && <Button cta asLink href={ctaUrl}>Donate</Button>}
-                {secondaryCtaUrl && <Button secondary asLink href={secondaryCtaUrl}>Donate</Button>}
-              </CTAContainer>
-            )}
           </TitleContainer>
         </ImageContainer>
         <ContentContainer>
@@ -78,7 +65,5 @@ MarqueeImageLayout.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  ctaUrl: PropTypes.string,
-  secondaryCtaUrl: PropTypes.string,
   onLight: PropTypes.bool
 };
