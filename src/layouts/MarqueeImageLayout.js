@@ -38,6 +38,7 @@ const TitleContainer = styled.div`
 
 const ContentContainer = styled.div`
   margin: 16px 13%;
+  max-width: 1536px;
 `;
 
 export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, lightBackground, children, ...props }) {
