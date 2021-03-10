@@ -1,25 +1,14 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 import Button from './Button';
 
 import { size, color } from '../theme';
+import { donateUrl, socialLinks } from '../constants';
 
 import logoImage from '../static/img/HessForController.svg';
 const logoImageAlt = "Hess for Controller logo";
-
-const socialLinks = [
-  {
-    icon: faFacebookF,
-    url: 'https://www.facebook.com/HessForLanCo/'
-  },
-  {
-    icon: faTwitter,
-    url: '#'
-  }
-];
 
 const Nav = styled.nav`
   height: ${size.navbarHeight}px;
@@ -68,13 +57,13 @@ export default function Navbar() {
       </NavHeader>
 
       <CTAButtonContainer>
-        <Button cta asLink href="#">Donate</Button>
+        <Button cta asLink href={donateUrl}>Donate</Button>
       </CTAButtonContainer>
 
       <NavSocialIcons>
-        {socialLinks.map(link => (
-          <SocialIconLink key={link.url} href={link.url}>
-            <FontAwesomeIcon icon={link.icon} />
+        {Object.entries(socialLinks).map(([key, link]) => (
+          <SocialIconLink key={key} href={link.url}>
+            <FontAwesomeIcon icon={link.icon} title={link.title} />
           </SocialIconLink>
         ))}
       </NavSocialIcons>

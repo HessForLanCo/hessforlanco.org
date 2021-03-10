@@ -24,7 +24,7 @@ const TitleContainer = styled.div`
   left: 50%;
   bottom: 0;
   padding: 48px;
-  color: ${props => props.onLight ? color.onLightBackground : color.onDarkBackground};
+  color: ${props => props.lightBackground ? color.onLightBackground : color.onDarkBackground};
   text-shadow: 5px 5px 10px ${color.textShadow};
   h1 {
     font-size: ${size.fontTitle}px;
@@ -40,13 +40,13 @@ const ContentContainer = styled.div`
   margin: 16px 13%;
 `;
 
-export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, onLight, children, ...props }) {
+export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, lightBackground, children, ...props }) {
   return (
     <BaseLayout {...props}>
       <LayoutContainer>
         <ImageContainer>
           <img src={imageUrl} alt={imageAlt} />
-          <TitleContainer onLight={onLight}>
+          <TitleContainer lightBackground={lightBackground}>
             {title && <h1>{title}</h1>}
             {subtitle && <h2>{subtitle}</h2>}
           </TitleContainer>
@@ -65,5 +65,5 @@ MarqueeImageLayout.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  onLight: PropTypes.bool
+  lightBackground: PropTypes.bool
 };
