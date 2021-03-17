@@ -30,4 +30,5 @@ jobs:
         run: |
           npm run export -- -o build
           touch build/.nojekyll
+          echo "www.hessforlanco.org" > build/CNAME
           npm run deploy -- -d build --dotfiles --user "GitHub Action Runner <support+actions@github.com>"

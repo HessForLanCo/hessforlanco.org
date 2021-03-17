@@ -12,7 +12,7 @@ const logoImageAlt = "Hess for Controller logo";
 
 const Nav = styled.nav`
   height: ${size.navbarHeight}px;
-  padding: 4px;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
