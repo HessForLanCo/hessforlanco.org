@@ -53,7 +53,7 @@ export default function Home() {
           Chris Hess is the better choice for Lancaster County Controller.  If you can, please volunteer or donate to Chris&apos;s campaign, and make sure to vote for Chris this November!  Your vote will help to ensure Lancaster County has a Controller who represents and fights for all Lancastrians.
         </p>
         <CTAButtonsContainer>
-          <Button secondary asLink href={volunteerUrl} target="_blank" rel="noopener noreferrer">Volunteer</Button>
+          <Button cta secondary asLink href={volunteerUrl} target="_blank" rel="noopener noreferrer">Volunteer with us</Button>
           <Button cta asLink href={donateUrl}>Donate</Button>
         </CTAButtonsContainer>
       </Content>

@@ -20,7 +20,8 @@ const StyledButton = styled.button`
   border: ${props => props.secondary ? `3px solid ${color.primary}` : 'none'};
   border-radius: 2px;
   font-size: ${size.fontPrimary}px;
-  font-weight: ${props => props.cta ? '600' : 'initial'};
+  font-weight: ${props => (props.cta && !props.secondary ? '600' : 'initial')};
+  text-transform: ${props => props.cta ? 'uppercase' : null};
   cursor: pointer;
   &:hover {
     background-color: ${props => (
