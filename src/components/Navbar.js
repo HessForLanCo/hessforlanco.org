@@ -33,7 +33,7 @@ const CTAButtonContainer = styled.div`
 
 const NavSocialIcons = styled.div`
   font-size: ${size.fontLarge}px;
-  margin-right: 32px;
+  margin-right: 16px;
 `;
 
 const SocialIconLink = styled.a`
@@ -56,10 +56,6 @@ export default function Navbar() {
         </Link>
       </NavHeader>
 
-      <CTAButtonContainer>
-        <Button cta asLink href={donateUrl}>Donate</Button>
-      </CTAButtonContainer>
-
       <NavSocialIcons>
         {Object.entries(socialLinks).map(([key, link]) => (
           <SocialIconLink key={key} href={link.url}>
@@ -67,6 +63,10 @@ export default function Navbar() {
           </SocialIconLink>
         ))}
       </NavSocialIcons>
+
+      <CTAButtonContainer>
+        <Button cta asLink href={donateUrl}>Donate</Button>
+      </CTAButtonContainer>
     </Nav>
   );
 }
