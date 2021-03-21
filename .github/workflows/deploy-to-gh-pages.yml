@@ -32,8 +32,10 @@ jobs:
           git remote set-url origin "https://git:${{ github.token }}@github.com/${{ github.repository }}.git"
 
       - name: Export and deploy
+        env:
+          BUILD_DIR: build
         run: |
-          npm run export -- -o build
-          touch build/.nojekyll
-          echo "${{ env.DOMAIN_NAME }}" > build/CNAME
-          npm run deploy -- -d build --dotfiles --user "${{ env.COMMIT_USER_NAME }} <${{ env.COMMIT_USER_EMAIL }}>"
+          npm run export -- -o ${{ env.BUILD_DIR }}
+          touch ${{ env.BUILD_DIR }}/.nojekyll
+          echo "${{ env.DOMAIN_NAME }}" > ${{ env.BUILD_DIR }}/CNAME
+          npm run deploy -- -d ${{ env.BUILD_DIR }} --dotfiles --user "${{ env.COMMIT_USER_NAME }} <${{ env.COMMIT_USER_EMAIL }}>"
