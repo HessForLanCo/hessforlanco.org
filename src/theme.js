@@ -1,19 +1,23 @@
 export const size = {
-  navbarHeight: 128,
-  fontPrimary: 20,
-  fontLarge: 32,
-  fontTitle: 72,
-  fontSubtitle: 28
+  navLogoHeightPx: 108,
+  fontPrimaryPx: 20,
+  fontLargePx: 32,
+  fontTitlePx: 72,
+  fontSubtitlePx: 28,
+  fontIconButtonPx: 48
 };
 
 export const color = {
   lightBackground: '#fff',
   onLightBackground: '#333',
+  hoverOnLightBackground: '#cdcdcd',
 
   darkBackground: '#333',
   onDarkBackground: '#fff',
 
-  textShadow: 'rgba(0, 0, 0, 0.25)',
+  backdrop: 'rgba(0, 0, 0, 0.75)',
+
+  shadow: 'rgba(0, 0, 0, 0.25)',
 
   primary: '#365fcb',
   primaryLight: '#7491db',
@@ -29,4 +33,13 @@ export const color = {
   ctaLight: '#ffe570',
   ctaDark: '#ffc800',
   onCta: '#333'
+};
+
+export const breakpoints = {
+  small: 768
+};
+
+export const zIndex = {
+  navMenu: 1001,
+  navMenuBackdrop: 1000
 };

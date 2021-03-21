@@ -15,7 +15,7 @@ const globalStyles = css`
   body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    font-size: ${size.fontPrimary}px;
+    font-size: ${size.fontPrimaryPx}px;
     background-color: ${color.lightBackground};
     color: ${color.onLightBackground};
   }

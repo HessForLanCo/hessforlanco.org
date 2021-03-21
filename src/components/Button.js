@@ -19,7 +19,7 @@ const StyledButton = styled.button`
   padding: ${props => props.secondary ? '9px 37px' : '12px 40px'};
   border: ${props => props.secondary ? `3px solid ${color.primary}` : 'none'};
   border-radius: 2px;
-  font-size: ${size.fontPrimary}px;
+  font-size: ${size.fontPrimaryPx}px;
   font-weight: ${props => (props.cta && !props.secondary ? '600' : 'initial')};
   text-transform: ${props => props.cta ? 'uppercase' : null};
   cursor: pointer;

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import BaseLayout from './BaseLayout';
-import { color, size } from '../theme';
+import { color, size, breakpoints } from '../theme';
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -25,20 +25,26 @@ const TitleContainer = styled.div`
   bottom: 0;
   padding: 48px;
   color: ${props => props.lightBackground ? color.onLightBackground : color.onDarkBackground};
-  text-shadow: 5px 5px 10px ${color.textShadow};
+  text-shadow: 5px 5px 10px ${color.shadow};
   h1 {
-    font-size: ${size.fontTitle}px;
+    font-size: ${size.fontTitlePx}px;
     margin: 8px 0;
   }
   h2 {
-    font-size: ${size.fontSubtitle}px;
+    font-size: ${size.fontSubtitlePx}px;
     margin: 8px 0;
+  }
+  @media (max-width: ${breakpoints.small}px) {
+    display: none;
   }
 `;
 
 const ContentContainer = styled.div`
   margin: 16px 13%;
   max-width: 1536px;
+  @media (max-width: ${breakpoints.small}px) {
+    display: none;
+  }
 `;
 
 export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, lightBackground, children, ...props }) {
