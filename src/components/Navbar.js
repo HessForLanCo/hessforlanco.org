@@ -6,13 +6,14 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './Button';
 
-import { size, color, breakpoints, zIndex } from '../theme';
+import { color, breakpoints, zIndex } from '../theme';
 import { donateUrl, socialLinks } from '../constants';
 
 import logoImage from '../static/img/HessForController.svg';
 const logoImageAlt = "Hess for Controller logo";
 
 const Nav = styled.nav`
+  font-size: 1rem;
   padding: 8px;
   width: 100%;
   display: flex;
@@ -26,7 +27,7 @@ const Nav = styled.nav`
 const NavHeader = styled.div`
   flex: 1 0 auto;
   img {
-    height: ${size.navLogoHeightPx}px;
+    height: 7rem;
     width: auto;
   }
   @media (max-width: ${breakpoints.small}px) {
@@ -46,7 +47,7 @@ const NavMenu = styled.div`
     z-index: ${zIndex.navMenu};
     width: ${props => props.show ? '75%' : 0};
     transition: width 0.2s ease-in-out;
-    padding-left: ${props => props.show ? `${size.fontLargePx}px` : 0};
+    padding-left: ${props => props.show ? '2rem' : 0};
     overflow: hidden;
     background-color: ${color.lightBackground};
     box-shadow: -5px 5px 15px ${color.shadow};
@@ -65,7 +66,7 @@ const MenuBackdrop = styled.div`
 `;
 
 const NavSocialIcons = styled.div`
-  font-size: ${size.fontLargePx}px;
+  font-size: 2em;
   margin-right: 16px;
 `;
 
@@ -86,7 +87,7 @@ const MenuOpenButtonContainer = styled.div`
 `;
 
 const MenuOpenButton = styled.button`
-  font-size: ${size.fontIconButtonPx}px;
+  font-size: 3em;
   border: none;
   background-color: ${color.lightBackground};
   cursor: pointer;
@@ -102,7 +103,7 @@ const MenuCloseButtonContainer = styled(MenuOpenButtonContainer)`
 `;
 
 const MenuCloseButton = styled(MenuOpenButton)`
-  font-size: ${size.fontSubtitlePx}px;
+  font-size: 2em;
 `;
 
 const CTAButtonContainer = styled.div`

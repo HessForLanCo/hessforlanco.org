@@ -19,6 +19,7 @@ const ImageContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
+  font-size: 1.5rem;
   position: absolute;
   right: 0;
   left: 50%;
@@ -26,15 +27,10 @@ const TitleContainer = styled.div`
   padding: 48px;
   color: ${props => props.lightBackground ? color.onLightBackground : color.onDarkBackground};
   text-shadow: 5px 5px 10px ${color.shadow};
-  h1 {
-    font-size: ${size.fontTitlePx}px;
-    margin: 8px 0;
+  h1, h2 {
+    margin: 0.25em 0;
   }
-  h2 {
-    font-size: ${size.fontSubtitlePx}px;
-    margin: 8px 0;
-  }
-  @media (max-width: ${breakpoints.small}px) {
+  @media (max-width: ${breakpoints.med}px) {
     display: none;
   }
 `;
@@ -42,9 +38,6 @@ const TitleContainer = styled.div`
 const ContentContainer = styled.div`
   margin: 16px 13%;
   max-width: 1536px;
-  @media (max-width: ${breakpoints.small}px) {
-    display: none;
-  }
 `;
 
 export default function MarqueeImageLayout({ imageUrl, imageAlt, title, subtitle, lightBackground, children, ...props }) {

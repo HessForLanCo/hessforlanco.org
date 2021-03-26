@@ -1,7 +1,7 @@
 import { Global, css } from '@emotion/react';
 import { config, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { size,color } from '../theme';
+import { color, breakpoints } from '../theme';
 
 /*
  * The below line comes from this GitHub issue to fix huge Fontawesome icons:
@@ -15,9 +15,12 @@ const globalStyles = css`
   body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    font-size: ${size.fontPrimaryPx}px;
+    font-size: 20px;
     background-color: ${color.lightBackground};
     color: ${color.onLightBackground};
+    @media (max-width: ${breakpoints.small}px) {
+      font-size: 16px;
+    }
   }
 
   * {
@@ -26,6 +29,18 @@ const globalStyles = css`
 
   a {
     text-decoration: none;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.67em;
+  }
+
+  h3 {
+    font-size: 1.3em;
   }
 
   /*

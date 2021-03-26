@@ -1,12 +1,3 @@
-export const size = {
-  navLogoHeightPx: 108,
-  fontPrimaryPx: 20,
-  fontLargePx: 32,
-  fontTitlePx: 72,
-  fontSubtitlePx: 28,
-  fontIconButtonPx: 48
-};
-
 export const color = {
   lightBackground: '#fff',
   onLightBackground: '#333',
@@ -36,7 +27,8 @@ export const color = {
 };
 
 export const breakpoints = {
-  small: 768
+  small: 768,
+  med: 1024
 };
 
 export const zIndex = {

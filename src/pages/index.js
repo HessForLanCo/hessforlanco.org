@@ -4,18 +4,20 @@ import MarqueeImageLayout from '../layouts/MarqueeImageLayout';
 import Button from '../components/Button';
 
 import { donateUrl, volunteerUrl } from '../constants';
+import { breakpoints } from '../theme';
 
 import marqueeImage from '../static/img/ChrisChatting.jpg';
 const marqueeImageAlt = "Chris chatting with another Lancaster County resident";
 
 const Content = styled.main`
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 16px;
-  h1, h2, p {
+  h1, h2, h3, p {
     width: 100%;
-    margin: 16px 0;
+    margin: 0.3em 0;
   }
 `;
 
@@ -23,9 +25,15 @@ const CTAButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 32px;
+  margin-top: 1.5em;
   a {
-    margin: 0 24px;
+    margin: 0 1.25em;
+  }
+  @media (max-width: ${breakpoints.small}px) {
+    flex-direction: column;
+    a {
+      margin: 0.5em 0;
+    }
   }
 `;
 
@@ -38,8 +46,8 @@ export default function Home() {
       subtitle="The better choice for Lancaster County Controller"
     >
       <Content>
-        <h1>Lancaster County has a choice for Controller for the first time in 20 years.</h1>
-        <h2>Chris Hess is the better choice.</h2>
+        <h2>Lancaster County has a choice for Controller for the first time in 20 years.</h2>
+        <h3>Chris Hess is the better choice.</h3>
         <p>
           Lancaster County hasn&apos;t had a contested race for County Controller since 2001, but this year, Lancastrians will finally have a choice for Controller.  The choice is clear.  Chris Hess is the right person for the job of Lancaster County Controller.
         </p>

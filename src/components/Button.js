@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { size, color } from '../theme';
+import { color } from '../theme';
 
 const StyledButton = styled.button`
   display: inline-block;
@@ -16,12 +16,19 @@ const StyledButton = styled.button`
     (props.cta && color.onCta) ||
     color.onPrimary
   )};
-  padding: ${props => props.secondary ? '9px 37px' : '12px 40px'};
-  border: ${props => props.secondary ? `3px solid ${color.primary}` : 'none'};
+  padding: 0.5em 2em;
+  border-width: 3px;
+  border-style: solid;
+  border-color: ${props => (
+    (props.secondary && color.primary) ||
+    (props.cta && color.cta) ||
+    color.primary
+  )};
   border-radius: 2px;
-  font-size: ${size.fontPrimaryPx}px;
+  font-size: 1rem;
   font-weight: ${props => (props.cta && !props.secondary ? '600' : 'initial')};
   text-transform: ${props => props.cta ? 'uppercase' : null};
+  text-align: center;
   cursor: pointer;
   &:hover {
     background-color: ${props => (
