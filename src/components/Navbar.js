@@ -29,6 +29,9 @@ const NavHeader = styled.div`
     height: ${size.navLogoHeightPx}px;
     width: auto;
   }
+  @media (max-width: ${breakpoints.small}px) {
+    flex: 1 1 75%;
+  }
 `;
 
 const NavMenu = styled.div`
@@ -42,7 +45,7 @@ const NavMenu = styled.div`
     bottom: 0;
     z-index: ${zIndex.navMenu};
     width: ${props => props.show ? '75%' : 0};
-    transition: width 0.25s ease-in-out;
+    transition: width 0.2s ease-in-out;
     padding-left: ${props => props.show ? `${size.fontLargePx}px` : 0};
     overflow: hidden;
     background-color: ${color.lightBackground};
@@ -59,12 +62,6 @@ const MenuBackdrop = styled.div`
   z-index: ${zIndex.navMenuBackdrop};
   background-color: ${color.backdrop};
   display: ${props => props.show ? 'initial' : 'none'};
-`;
-
-const MenuCloseButtonContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
 `;
 
 const NavSocialIcons = styled.div`
@@ -96,6 +93,12 @@ const MenuOpenButton = styled.button`
   &:active, &:hover {
     background-color: ${color.hoverOnLightBackground};
   }
+`;
+
+const MenuCloseButtonContainer = styled(MenuOpenButtonContainer)`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const MenuCloseButton = styled(MenuOpenButton)`
